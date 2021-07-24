@@ -7,3 +7,5 @@ Built at: 2021-07-25 2:03:17 ├F10: AM┤
 main.js  930 bytes       0  [emitted]  main
 Entrypoint main = main.js
 [0] ./src/index.js 382 bytes {0} [built]
+
+## 通过touch .gitignore 生成.gitignore 文件
