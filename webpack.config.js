@@ -1,11 +1,11 @@
-let path = require('path')
+const path = require('path')
 module.exports = {
   // webpack的核心配置
   // 入口配置
   entry: './src/index.js',
   // 出口配置
   output: {
-    filename: 'bundle.js', // 出口文件名
+    filename: 'built.js', // 出口文件名
     path: path.resolve(__dirname, 'dist')
   },
   // module  loader的配置
@@ -14,13 +14,19 @@ module.exports = {
     rules: [
       {
         // 匹配哪些文件
-        test: /\.css$/i,
-        use: [
-          // 创建style-loader的目的是创建style标签，然后将你的js代码插入到你的
+        test: /\.css$/,
+        // 创建style-loader的目的是创建style标签，然后将你的js代码插入到你的
           //添加到header中生效
-          "style-loader", 
-          // 将css变成common.js的模块加载到js中， 里面都是字符串
-          "css-loader"],
+         // 将css变成common.js的模块加载到js中， 里面都是字符串
+        use: ['style-loader', 'css-loader']
+      },
+      {
+        // 匹配哪些文件
+        test: /\.less$/,
+        // 创建style-loader的目的是创建style标签，然后将你的js代码插入到你的
+          //添加到header中生效
+         // 将css变成common.js的模块加载到js中， 里面都是字符串
+        use: ['style-loader', 'css-loader', 'less-loader']
       },
     ]
   },

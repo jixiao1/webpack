@@ -10,10 +10,11 @@
   webpack打包可以js和json, 不能处理样式资源
 
 */
+// import data from './index.json'
+// console.log(data);
+// function add (x, y) {
+//   return x+ y;
+// }
+// console.log(add(1,2))
 import './index.css'
-import data from './index.json'
-console.log(data);
-function add (x, y) {
-  return x+ y;
-}
-console.log(add(1,2))
+import './index.less'
