@@ -1,4 +1,5 @@
 const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
   // webpack的核心配置
   // 入口配置
@@ -31,7 +32,11 @@ module.exports = {
     ]
   },
   // 插件的配置
-  plugins: [],
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './index.html'
+    })
+  ],
   // 模式 分为生产模式（production）和开发模式（development)
   // mode: 'production',
   mode: 'development',
