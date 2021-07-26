@@ -16,5 +16,6 @@
 //   return x+ y;
 // }
 // console.log(add(1,2))
+import './iconfont.css'
 import './index.css'
 import './index.less'

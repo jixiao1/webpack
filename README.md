@@ -1,4 +1,4 @@
-$ webpack bundle -o  ./dist --mode=production
+$ webpack bundle -o  ./dist --mode=development
 Hash: 10057329a599207b357d
 Version: webpack 4.46.0
 Time: 740ms

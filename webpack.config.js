@@ -29,6 +29,26 @@ module.exports = {
          // 将css变成common.js的模块加载到js中， 里面都是字符串
         use: ['style-loader', 'css-loader', 'less-loader']
       },
+      {
+        test: /\.(jpg | png | gif)$/,
+         loader: 'url-loader',
+        options: {
+          // 图片大小小于8kb, 就会被base64所处理，
+          // 减少请求的数量（减轻服务器的压力）
+          //缺点： 体积会跟大（请求速度会更慢）
+          limit: 8 * 1024,
+          esModule: false,
+          name: '[hash: 10].[ext]'
+        },
+      },
+      {
+        test: /\.html$/,
+        loader: 'html-loader'
+      },
+      {
+        exclude: /\.(css| js | less)$/,
+        loader: 'file-loader'
+      }
     ]
   },
   // 插件的配置
